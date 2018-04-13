@@ -16,11 +16,10 @@ describe 'User' do
       )
 
       visit trip_path(trip1)
-
-      expect(page).to have_content(trip1.total_hiking_distance)
-      expect(page).to have_content(trip1.average_hiking_distance)
-      expect(page).to have_content(trip1.longest_hiking_distance)
-      expect(page).to have_content(trip1.shortest_hiking_distance)
+      expect(page).to have_content("Planned Hiking Distance: #{trip1.total_hiking_distance}")
+      expect(page).to have_content("Average Hiking Distance: #{trip1.average_hiking_distance}")
+      expect(page).to have_content("Longest Hiking Distance: #{trip1.longest_hiking_distance}")
+      expect(page).to have_content("Shortest Hiking Distance: #{trip1.shortest_hiking_distance}")
     end
   end
 end
